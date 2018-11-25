@@ -1,17 +1,12 @@
 import { Brand } from './../../core/models/brand';
 import { Taxon } from './../../core/models/taxon';
 import { Product } from './../../core/models/product';
-import { HomeState } from './index';
 import { SearchState } from './search.state';
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { Taxonomy } from '../../core/models/taxonomy';
 
 /******************* Base Search State ******************/
-export const getHomeState = createFeatureSelector<HomeState>('home');
-export const getSearchState = createSelector(
-  getHomeState,
-  (state: HomeState) => state.search
-);
+export const getSearchState = createFeatureSelector<SearchState>('search');
 
 /******************* Individual selectors ******************/
 const fetchSelectedFilters = (state: SearchState) => state.selectedFilters;

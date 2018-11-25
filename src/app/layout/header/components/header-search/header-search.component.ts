@@ -1,7 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { environment } from './../../../../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
-import { SearchActions } from './../../../../home/reducers/search.actions';
+import { SearchActions } from './../../../../search/reducers/search.actions';
 import { AppState } from './../../../../interfaces';
 import { Store } from '@ngrx/store';
 import { Renderer2, PLATFORM_ID, Inject } from '@angular/core';

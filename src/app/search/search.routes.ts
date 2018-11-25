@@ -1,7 +1,7 @@
-import { HomeComponent } from './home.component';
+import { SearchComponent } from './search.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
 
-export const HomeRoutes = [
-  { path: 'search', component: HomeComponent },
+export const SearchRoutes = [
+  { path: '', component: SearchComponent },
   { path: 'c/:number', component: CategoryPageComponent},
 ];

@@ -1,5 +1,5 @@
-import { Taxonomy } from './../../core/models/taxonomy';
-import { Product } from './../../core/models/product';
+import { Taxonomy } from '../../core/models/taxonomy';
+import { Product } from '../../core/models/product';
 import { SearchActions } from './search.actions';
 import { SearchState, SearchStateRecord } from './search.state';
 

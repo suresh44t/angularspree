@@ -10,7 +10,7 @@ export const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: './home/index#HomeModule',
+    loadChildren: './search/search.module#SearchModule',
     data: { preload: false, delay: false },
   },
   {

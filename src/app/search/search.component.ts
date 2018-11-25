@@ -8,9 +8,9 @@ import {
   getPaginationData,
   searchFilterStatus
 } from './reducers/selectors';
-import { ProductActions } from './../product/actions/product-actions';
-import { AppState } from './../interfaces';
-import { getTaxonomies, rootTaxonomyId, getBrands } from './../product/reducers/selectors';
+import { ProductActions } from '../product/actions/product-actions';
+import { AppState } from '../interfaces';
+import { getTaxonomies, rootTaxonomyId, getBrands } from '../product/reducers/selectors';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit, ViewChild, ChangeDetectionStrategy, PLATFORM_ID, Inject, OnDestroy } from '@angular/core';
@@ -22,12 +22,12 @@ import { Taxonomy } from '../core/models/taxonomy';
 import { Brand } from '../core/models/brand';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class SearchComponent implements OnInit, OnDestroy {
   taxonomies$: Observable<Taxonomy[]>;
   brands$: Observable<Array<Brand>>;
   selectedTaxonIds$: Observable<number[]>;

@@ -1,4 +1,4 @@
-import { ProductEffects } from './../product/effects/product.effects';
+import { ProductEffects } from '../product/effects/product.effects';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { BrandFilterComponent } from './sidebar/brand-filter/brand-filter.component';
 import { CategoriesComponent } from './sidebar/categories/categories.component';
@@ -6,14 +6,14 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { ProductActions } from './../product/actions/product-actions';
+import { ProductActions } from '../product/actions/product-actions';
 import { SearchActions } from './reducers/search.actions';
-import { SharedModule } from './../shared/index';
+import { SharedModule } from '../shared/index';
 import { ModalModule } from 'ngx-bootstrap';
 import { AccordionModule } from 'ngx-bootstrap';
 import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
 // Components
-import { HomeComponent } from './home.component';
+import { SearchComponent } from './search.component';
 
 // Breadcrumb components
 import { BreadcrumbComponent } from './breadcrumb/components/breadcrumb/breadcrumb.component';
@@ -28,15 +28,15 @@ import { ContentComponent } from './content/content';
 // Sidebar components
 import { FilterMobileMenuComponent } from './filter-mobile-menu/filter-mobile-menu.component'
 // Routes
-import { HomeRoutes as routes } from './home.routes';
+import { SearchRoutes as routes } from './search.routes';
 
 import { FilterPipe } from './content/product-list/product-filter.pipe';
-import { reducers } from './reducers/index';
+import * as fromSearch from './reducers/search.reducer';
 import { CategoryPageComponent } from './category-page/category-page.component';
 @NgModule({
   declarations: [
     // components
-    HomeComponent,
+    SearchComponent,
     ProductListComponent,
     ProductListItemComponent,
     BreadcrumbComponent,
@@ -67,7 +67,7 @@ import { CategoryPageComponent } from './category-page/category-page.component';
      * eagerly or lazily and will be dynamically added to
      * the existing state.
      */
-    StoreModule.forFeature('home', reducers),
+    StoreModule.forFeature('search', fromSearch.reducer),
 
     /**
      * Effects.forFeature is used to register effects
@@ -86,4 +86,4 @@ import { CategoryPageComponent } from './category-page/category-page.component';
     SearchActions
   ]
 })
-export class HomeModule { }
+export class SearchModule { }
