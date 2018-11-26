@@ -1,7 +1,6 @@
 import { ProductActions } from './../../product/actions/product-actions';
 import { environment } from './../../../environments/environment';
 import { Router } from '@angular/router';
-import { SearchActions } from './../../search/reducers/search.actions';
 import { getTaxonomies, getBrands } from './../../product/reducers/selectors';
 import { getTotalCartItems } from './../../checkout/reducers/selectors';
 import {
@@ -26,6 +25,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { getAuthStatus } from '../../auth/reducers/selectors';
 import { ProductService } from '../../core/services/product.service';
 import { Brand } from '../../core/models/brand';
+import { SearchActions } from '../../search/store/search.actions';
 
 @Component({
   selector: 'app-header',

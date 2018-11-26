@@ -1,4 +1,3 @@
-import { SearchActions } from './../../../search/reducers/search.actions';
 import { Store } from '@ngrx/store';
 import { ActivatedRoute } from '@angular/router';
 import { AppState } from './../../../interfaces';
@@ -8,6 +7,7 @@ import {
   Input,
   ChangeDetectionStrategy
 } from '@angular/core';
+import { SearchActions } from '../../../search/store/search.actions';
 
 @Component({
   selector: 'app-lp-product-list',

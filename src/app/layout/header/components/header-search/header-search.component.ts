@@ -1,7 +1,6 @@
 import { isPlatformBrowser } from '@angular/common';
 import { environment } from './../../../../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
-import { SearchActions } from './../../../../search/reducers/search.actions';
 import { AppState } from './../../../../interfaces';
 import { Store } from '@ngrx/store';
 import { Renderer2, PLATFORM_ID, Inject } from '@angular/core';
@@ -13,6 +12,7 @@ import {
   EventEmitter,
   ChangeDetectionStrategy
 } from '@angular/core';
+import { SearchActions } from '../../../../search/store/search.actions';
 @Component({
   selector: 'app-header-search',
   templateUrl: './header-search.component.html',

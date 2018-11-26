@@ -1,4 +1,4 @@
-import { SearchActions } from './../search/reducers/search.actions';
+import { SearchActions } from './../search/store/search.actions';
 import { ProductActions } from './../product/actions/product-actions';
 import { TransferStateInterceptor } from './interceptors/transfer-state.interceptor';
 import { TransferStateService } from './services/transfer-state.service';

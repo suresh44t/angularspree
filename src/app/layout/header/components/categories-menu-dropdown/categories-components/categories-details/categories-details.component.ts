@@ -1,6 +1,5 @@
 import { Observable } from 'rxjs';
-import { taxonomiByName } from './../../../../../../search/reducers/selectors';
-import { SearchActions } from './../../../../../../search/reducers/search.actions';
+import { SearchActions } from './../../../../../../search/store/search.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../../../../../interfaces';
 import { environment } from './../../../../../../../environments/environment';

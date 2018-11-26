@@ -1,13 +1,13 @@
 import { ProductEffects } from '../product/effects/product.effects';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
-import { BrandFilterComponent } from './sidebar/brand-filter/brand-filter.component';
-import { CategoriesComponent } from './sidebar/categories/categories.component';
+import { BrandFilterComponent } from './components/sidebar/brand-filter/brand-filter.component';
+import { CategoriesComponent } from './components/sidebar/categories/categories.component';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { ProductActions } from '../product/actions/product-actions';
-import { SearchActions } from './reducers/search.actions';
+import { SearchActions } from './store/search.actions';
 import { SharedModule } from '../shared/index';
 import { ModalModule } from 'ngx-bootstrap';
 import { AccordionModule } from 'ngx-bootstrap';
@@ -16,23 +16,23 @@ import { NgxInputStarRatingModule } from '@ngx-lite/input-star-rating';
 import { SearchComponent } from './search.component';
 
 // Breadcrumb components
-import { BreadcrumbComponent } from './breadcrumb/components/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from './components/breadcrumb/components/breadcrumb/breadcrumb.component';
 
 // Content components
-import { ProductListComponent } from './content/product-list/product-list.component';
-import { ProductListItemComponent } from './content/product-list/product-list-item/product-list-item.component';
-import { FilterSummaryComponent } from './content/filter-summary/filter-summary.component';
-import { CustomizeComponent } from './content/customize/customize.component';
-import { ContentHeaderComponent } from './content/content-header/content-header.component';
-import { ContentComponent } from './content/content';
+import { ProductListComponent } from './components/content/product-list/product-list.component';
+import { ProductListItemComponent } from './components/content/product-list/product-list-item/product-list-item.component';
+import { FilterSummaryComponent } from './components/content/filter-summary/filter-summary.component';
+import { CustomizeComponent } from './components/content/customize/customize.component';
+import { ContentHeaderComponent } from './components/content/content-header/content-header.component';
+import { ContentComponent } from './components/content/content';
 // Sidebar components
-import { FilterMobileMenuComponent } from './filter-mobile-menu/filter-mobile-menu.component'
+import { FilterMobileMenuComponent } from './components/filter-mobile-menu/filter-mobile-menu.component'
 // Routes
 import { SearchRoutes as routes } from './search.routes';
 
-import { FilterPipe } from './content/product-list/product-filter.pipe';
-import * as fromSearch from './reducers/search.reducer';
-import { CategoryPageComponent } from './category-page/category-page.component';
+import { FilterPipe } from './components/content/product-list/product-filter.pipe';
+import * as fromSearch from './store/search.reducer';
+import { CategoryPageComponent } from './components/category-page/category-page.component';
 @NgModule({
   declarations: [
     // components

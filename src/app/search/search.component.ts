@@ -1,4 +1,4 @@
-import { SearchActions } from './reducers/search.actions';
+import { SearchActions } from './store/search.actions';
 import {
   getSelectedTaxonIds,
   getProductsByKeyword,
@@ -7,7 +7,7 @@ import {
   taxonomiByName,
   getPaginationData,
   searchFilterStatus
-} from './reducers/selectors';
+} from './store/selectors';
 import { ProductActions } from '../product/actions/product-actions';
 import { AppState } from '../interfaces';
 import { getTaxonomies, rootTaxonomyId, getBrands } from '../product/reducers/selectors';
