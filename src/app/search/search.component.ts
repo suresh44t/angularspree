@@ -1,13 +1,3 @@
-import { SearchActions } from './store/search.actions';
-import {
-  getSelectedTaxonIds,
-  getProductsByKeyword,
-  getChildTaxons,
-  categeoryLevel,
-  taxonomiByName,
-  getPaginationData,
-  searchFilterStatus
-} from './store/selectors';
 import { ProductActions } from '../product/actions/product-actions';
 import { AppState } from '../interfaces';
 import { getTaxonomies, rootTaxonomyId, getBrands } from '../product/reducers/selectors';
@@ -20,6 +10,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Taxonomy } from '../core/models/taxonomy';
 import { Brand } from '../core/models/brand';
+import { SearchActions } from './actions/search.actions';
 
 @Component({
   selector: 'app-search',
@@ -30,11 +21,7 @@ import { Brand } from '../core/models/brand';
 export class SearchComponent implements OnInit, OnDestroy {
   taxonomies$: Observable<Taxonomy[]>;
   brands$: Observable<Array<Brand>>;
-  selectedTaxonIds$: Observable<number[]>;
-  categoryLevel$: Observable<any>;
   products$: Observable<Array<Product>>;
-  pagination$: Observable<any>;
-  isFilterOn$: Observable<Boolean>;
   isBrandOpen = false;
   isCategoryOpen = true;
   screenwidth;
@@ -59,10 +46,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.calculateInnerWidth();
     this.store.dispatch(this.actions.getAllTaxonomies());
     this.taxonomies$ = this.store.select(getTaxonomies);
-    this.selectedTaxonIds$ = this.store.select(getSelectedTaxonIds);
-    this.products$ = this.store.select(getProductsByKeyword);
-    this.pagination$ = this.store.select(getPaginationData);
-    this.isFilterOn$ = this.store.select(searchFilterStatus);
     this.store.dispatch(this.actions.getBrands());
     this.brands$ = this.store.select(getBrands);
 
@@ -73,7 +56,6 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   onUrlChange(urlParams: Object) {
-    this.store.dispatch(this.searchActions.getproductsByKeyword(urlParams));
   }
 
   showModal(): void {
@@ -95,15 +77,8 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   OnCategeorySelected(category) {
-    this.store.dispatch(this.searchActions.getChildTaxons(this.rootTaxonomyId, category.id));
-    this.taxonomies$ = this.store.select(getChildTaxons)
-    this.categoryLevel$ = this.store.select(categeoryLevel)
-    this.store.dispatch(this.searchActions.getTaxonomiesByName('Brands', category.name));
-    this.brands$ = this.store.select(taxonomiByName)
-    this.store.dispatch(this.searchActions.setSearchFilterOn())
   }
   showAll() {
-    this.store.dispatch(this.searchActions.setSearchFilterOff())
   }
 
   isOpenChangeaccourdian() {

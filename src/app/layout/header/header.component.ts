@@ -25,7 +25,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { getAuthStatus } from '../../auth/reducers/selectors';
 import { ProductService } from '../../core/services/product.service';
 import { Brand } from '../../core/models/brand';
-import { SearchActions } from '../../search/store/search.actions';
+import { SearchActions } from '../../search/actions/search.actions';
 
 @Component({
   selector: 'app-header',

@@ -7,10 +7,10 @@ import {
   animate,
   transition
 } from '@angular/animations';
-import { SearchActions } from '../../store/search.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../interfaces';
 import { ModalDirective } from 'ngx-bootstrap/modal';
+import { SearchActions } from '../../actions/search.actions';
 @Component({
   selector: 'app-filter-mobile-menu',
   templateUrl: './filter-mobile-menu.component.html',

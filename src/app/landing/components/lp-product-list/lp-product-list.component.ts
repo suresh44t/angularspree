@@ -7,7 +7,7 @@ import {
   Input,
   ChangeDetectionStrategy
 } from '@angular/core';
-import { SearchActions } from '../../../search/store/search.actions';
+import { SearchActions } from '../../../search/actions/search.actions';
 
 @Component({
   selector: 'app-lp-product-list',

@@ -1,3 +1,4 @@
+import { ProductActions } from './../product/actions/product-actions';
 import { ProductEffects } from '../product/effects/product.effects';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { BrandFilterComponent } from './components/sidebar/brand-filter/brand-filter.component';
@@ -6,8 +7,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { ProductActions } from '../product/actions/product-actions';
-import { SearchActions } from './store/search.actions';
 import { SharedModule } from '../shared/index';
 import { ModalModule } from 'ngx-bootstrap';
 import { AccordionModule } from 'ngx-bootstrap';
@@ -31,8 +30,10 @@ import { FilterMobileMenuComponent } from './components/filter-mobile-menu/filte
 import { SearchRoutes as routes } from './search.routes';
 
 import { FilterPipe } from './components/content/product-list/product-filter.pipe';
-import * as fromSearch from './store/search.reducer';
 import { CategoryPageComponent } from './components/category-page/category-page.component';
+import * as fromSearch from './reducers/search.reducer';
+import { SearchEffects } from './effects/search.effects';
+
 @NgModule({
   declarations: [
     // components
@@ -77,13 +78,12 @@ import { CategoryPageComponent } from './components/category-page/category-page.
      * All Effects will only be instantiated once regardless of
      * whether they are registered once or multiple times.
      */
-    EffectsModule.forFeature([ProductEffects]),
+    EffectsModule.forFeature([ProductEffects, SearchEffects]),
 
     SharedModule,
   ],
   providers: [
     ProductActions,
-    SearchActions
   ]
 })
 export class SearchModule { }

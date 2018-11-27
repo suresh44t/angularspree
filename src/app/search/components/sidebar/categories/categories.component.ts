@@ -1,11 +1,11 @@
 import { ActivatedRoute } from '@angular/router';
 import { AppState } from './../../../../interfaces';
 import { Store } from '@ngrx/store';
-import { SearchActions } from './../../../store/search.actions';
 import { Component, OnInit, Input, EventEmitter, Output, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { URLSearchParams } from '@angular/http'
 import { isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { SearchActions } from '../../../actions/search.actions';
 
 
 @Component({

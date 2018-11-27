@@ -1,9 +1,8 @@
-import { SearchActions } from './../../../store/search.actions';
-import { getFilters } from './../../../store/selectors';
 import { AppState } from './../../../../interfaces';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { SearchActions } from '../../../actions/search.actions';
 
 @Component({
   selector: 'app-filter-summary',

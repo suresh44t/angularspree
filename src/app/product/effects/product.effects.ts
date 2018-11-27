@@ -1,5 +1,4 @@
 import { map, switchMap } from 'rxjs/operators';
-import { SearchActions } from './../../search/store/search.actions';
 import { Product } from './../../core/models/product';
 import { ProductActions } from './../actions/product-actions';
 import { Observable } from 'rxjs';
@@ -10,6 +9,7 @@ import { Action } from '@ngrx/store';
 import { Brand } from '../../core/models/brand';
 import { Review } from '../../core/models/review';
 import { RatingOption } from '../../core/models/rating_option';
+import { SearchActions } from '../../search/actions/search.actions';
 
 @Injectable()
 export class ProductEffects {

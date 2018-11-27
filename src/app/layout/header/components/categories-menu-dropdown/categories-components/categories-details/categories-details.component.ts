@@ -1,5 +1,4 @@
 import { Observable } from 'rxjs';
-import { SearchActions } from './../../../../../../search/store/search.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../../../../../interfaces';
 import { environment } from './../../../../../../../environments/environment';
@@ -11,6 +10,7 @@ import {
   animate,
   transition
 } from '@angular/animations';
+import { SearchActions } from '../../../../../../search/actions/search.actions';
 
 @Component({
   selector: 'app-categories-details',

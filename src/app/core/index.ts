@@ -1,4 +1,3 @@
-import { SearchActions } from './../search/store/search.actions';
 import { ProductActions } from './../product/actions/product-actions';
 import { TransferStateInterceptor } from './interceptors/transfer-state.interceptor';
 import { TransferStateService } from './services/transfer-state.service';
@@ -64,7 +63,6 @@ import { ResponseInterceptor } from './interceptors/reponse.interceptor';
     // ProductDummyService,
     ProductService,
     ProductActions,
-    SearchActions,
     AuthActions,
     CheckoutActions,
     UserActions,

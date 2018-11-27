@@ -1,10 +1,10 @@
 import { Store } from '@ngrx/store';
 import { AppState } from './../../../../interfaces';
-import { SearchActions } from './../../../../search/store/search.actions';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Brand } from '../../../../core/models/brand';
+import { SearchActions } from '../../../../search/actions/search.actions';
 
 @Component({
   selector: 'app-brand-menu-dropdown',

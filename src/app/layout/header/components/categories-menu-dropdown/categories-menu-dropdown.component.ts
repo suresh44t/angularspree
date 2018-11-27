@@ -1,4 +1,3 @@
-import { SearchActions } from './../../../../search/store/search.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from './../../../../interfaces';
 import { ActivatedRoute } from '@angular/router';
@@ -13,6 +12,7 @@ import {
 
 import { URLSearchParams } from '@angular/http'
 import { Subscription } from 'rxjs';
+import { SearchActions } from '../../../../search/actions/search.actions';
 @Component({
   selector: 'app-categories-menu-dropdown',
   templateUrl: './categories-menu-dropdown.component.html',

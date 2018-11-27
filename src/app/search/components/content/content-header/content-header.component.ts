@@ -3,7 +3,6 @@ import { Component, OnInit, Input, ChangeDetectionStrategy, PLATFORM_ID, Inject 
 import { isPlatformBrowser } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../../interfaces';
-import { searchKeyword } from '../../../store/selectors';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-content-header',
