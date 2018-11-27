@@ -12,9 +12,17 @@ export const initialState: IState = {
 };
 
 export const reducer = produce<IState, SearchActions>((draft, action) => {
-  switch (action.type) {
+  // Will keep showing loading animation for any action,
+  // unless that action is stoping animation.
+  draft.loadingData = true;
 
+  switch (action.type) {
     case SearchActionTypes.GET_SEARCH_RESULTS_SUCCESS:
-      draft.loadingData = true;
+      draft = action.payload;
+      draft.loadingData = false;
+      break;
+    case SearchActionTypes.GET_SELECTED_CATEGORY_SUCCESS:
+      draft.loadingData = false;
+      break;
   }
 }, initialState);

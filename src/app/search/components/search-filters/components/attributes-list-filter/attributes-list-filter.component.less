@@ -1,0 +1,46 @@
+@import "../../../../colors.less";
+@import "../../../../layout.less";
+
+.list-filter {
+
+  .list-name {
+    color: @ahref-links-color;
+  }
+  
+  .checkmark {
+    right: 0.5rem;
+    position: absolute;
+  }
+
+  .item {
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+    a {
+      &.bold {
+        font-weight: 800 !important;
+        color: black;
+      }
+      font-weight: 100 !important;
+      color: @ahref-links-color;
+      padding-bottom: 0.3rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  .show-more {
+    margin-top: 1rem;
+    color: @ahref-links-color;
+    cursor: pointer;
+    display: block;
+    color: #21ba45;
+    font-weight: bold;
+    padding-bottom: 1rem;
+    &:hover > span {
+      text-decoration: underline;
+    }
+  }
+}

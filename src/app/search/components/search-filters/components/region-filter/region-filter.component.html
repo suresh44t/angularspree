@@ -1,0 +1,11 @@
+<div class="region">
+  <h3>{{'SEARCH_SEARCH-FILTER_COMPONENTS_REGION-FILTER.Region' |  translate }}</h3>
+  <app-list-filter
+    itemDisplayNameField='displayName'
+    itemSelectionValueField='id'
+    [parentPath]="locationLevels"
+    [topLevel]="locations"
+    (onSelected)="emitSelection($event)"
+    [selectedItem]="selectedLocation">
+  </app-list-filter>
+</div>

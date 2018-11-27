@@ -1,0 +1,70 @@
+<div class="search-filters">
+  <div class="location legends">
+    <h2>{{ 'SEARCH_SEARCH-FILTER.Location' | translate }}</h2>
+    <hr>
+    
+    <app-select-filter
+      title="Distance"
+      [selectConfig]="setDistanceSelectConfig"
+      (onSelected)="OnFilterUpdateSelected('distance', $event.current)">
+    </app-select-filter>
+
+    <app-region-filter
+      [locations]="locations$ | async"
+      (onSelected)="OnFilterUpdateSelected('locationId', $event)"
+      [selectedLocation]="searchResponse.location"
+      [locationLevels]="searchResponse.locationLevels">
+    </app-region-filter>
+  </div>
+  
+  <div class="category legends">
+    <h2>{{ 'SEARCH_SEARCH-FILTER.Category' | translate }}</h2>
+    <hr>
+    <app-category-filter
+      [categories]="categories$ | async"
+      (onSelected)="OnFilterUpdateSelected('categoryId', $event); clearAttributes()"
+      [selectedCategory]="searchResponse.category"
+      [categoryLevels]="searchResponse.categoryLevels">
+    </app-category-filter>
+  </div>
+
+  <div class="prop-filters legends">
+    <h2>{{ 'SEARCH_SEARCH-FILTER.Filters' | translate }}</h2>
+    <hr>
+
+    <!-- Price Range Filter -->
+    <app-range-filter
+      title="Price"
+      [min]="searchFilters.range?.min"
+      [max]="searchFilters.range?.max"
+      (onMinRange)="OnRangeFilterUpdateSelected('min', $event);"
+      (onMaxRange)="OnRangeFilterUpdateSelected('max', $event);">
+    </app-range-filter>
+
+    <div *ngFor="let attribute of searchResponse.category?.attributes">
+      <h2>{{attribute.displayName}}</h2>
+      <hr>
+      <app-attributes-filter
+        itemDisplayNameField='displayName'
+        itemSelectionValueField='name'
+        (onSelected)="OnAttributeFilterUpdateSelected(attribute, $event)"
+        [collection]="attribute.fields"
+        [selectedItem]="isSelectedAttr(attribute)">
+      </app-attributes-filter>
+    </div>
+  </div>
+
+  <div class="checkbox-filters legends">
+    <hr>
+    <!-- Urgent Ads -->
+    <app-checkbox-filter
+      title='Urgent Ads'
+      (onSelected)="OnBooleanFilterUpdateSelected('urgent_filter', $event);">
+    </app-checkbox-filter>
+
+    <!-- Ads  with pictures -->
+    <app-checkbox-filter
+      title='Ads with pictures'
+      (onSelected)="OnBooleanFilterUpdateSelected('photos_filter', $event);">
+    </app-checkbox-filter>
+</div>

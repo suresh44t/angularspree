@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import ISearchFilter from '../models/search-filters.model';
 
 export enum SearchActionTypes {
   GET_SELECTED_CATEGORY = 'Search: Get Selected Category',
@@ -23,6 +24,7 @@ export class GetSearchResult implements Action {
 
 export class GetSearchResultSuccess implements Action {
   readonly type = SearchActionTypes.GET_SEARCH_RESULTS_SUCCESS;
+  constructor(readonly payload: ISearchFilter) {};
 }
 
 export type SearchActions =

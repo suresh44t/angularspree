@@ -1,0 +1,36 @@
+@import "../../../../colors.less";
+@import "../../../../layout.less";
+
+.list-filter {
+  .list {
+    max-height: 200px;
+  }
+
+  .list-name {
+    color: @ahref-links-color;
+  }
+  
+  .checkmark {
+    right: 0.5rem;
+    position: absolute;
+  }
+
+  .item {
+    padding-bottom: 0.3rem;
+    cursor: pointer;
+    a {
+      font-weight: 100 !important;
+      color: @ahref-links-color;
+      padding-bottom: 0.3rem;
+      cursor: pointer;
+      font-size: 1.1rem;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .child-list > .item {
+    padding-left: 1rem;
+  }
+}

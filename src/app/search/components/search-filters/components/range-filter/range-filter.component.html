@@ -1,0 +1,20 @@
+<div class="range">
+  <h3 *ngIf="title">{{title}}</h3>
+
+  <div class="ui form">
+    <div class="two fields">
+      <div class="field">
+        <input type="text" [(ngModel)]='rangeVal.min' name="min" placeholder="{{ 'SEARCH_SEARCH-FILTER_COMPONENTS_RANGE-FILTER.Min'| translate }}">
+      </div>
+      <strong>to</strong>
+      <div class="field">
+        <input type="text" [(ngModel)]='rangeVal.max' name="max" placeholder="{{ 'SEARCH_SEARCH-FILTER_COMPONENTS_RANGE-FILTER.Max'| translate }}">
+      </div>
+      <button type="submit"
+        class="ui green right button icon"
+        (click)="onSubmit()">
+        {{ 'SEARCH_SEARCH-FILTER_COMPONENTS_RANGE-FILTER.Go'| translate }}
+      </button>
+    </div>
+  </div>
+</div>

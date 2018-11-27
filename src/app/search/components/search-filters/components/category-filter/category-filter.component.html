@@ -1,0 +1,8 @@
+<app-list-filter
+  itemDisplayNameField='displayName'
+  itemSelectionValueField='id'
+  [parentPath]="categoryLevels"
+  [topLevel]="categories"
+  (onSelected)="emitSelection($event)"
+  [selectedItem]="selectedCategory">
+</app-list-filter>

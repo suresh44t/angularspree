@@ -1,0 +1,15 @@
+<div class="select-filter">
+  <h3 *ngIf="title">{{title}}</h3>
+  <div class="select">
+    <sui-select class="selection"
+      [(ngModel)]="dropDownConfig.selectedOption"
+      [options]="dropDownConfig.options"
+      (selectedOptionChange)="emitSelection($event)"
+      labelField="name"
+      #select
+    >
+      <sui-select-option *ngFor="let option of select.filteredOptions" [value]="option">
+      </sui-select-option>
+    </sui-select>
+  </div>
+</div>

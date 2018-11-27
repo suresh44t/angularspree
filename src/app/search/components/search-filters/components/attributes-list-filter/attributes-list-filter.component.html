@@ -1,0 +1,27 @@
+<div class="list-filter">
+  <div class="list" [hidden]="!selectedItemVal">
+    <h4 class="item list-name" (click)="emitSelection(null)">
+      <i class="left chevron grey icon"></i>
+      <a (click)="emitSelection(null)">All</a>
+    </h4>
+  </div>
+
+  <div class="list" *ngFor="let item of actualCollection; let i = index">
+    <h4 class="item list-name" (click)="emitSelection(item[itemSelectionValueField])">
+      <a
+        [ngClass]="{bold: isSelectedItem(item)}"
+        (click)="emitSelection(item[itemSelectionValueField])">
+        {{item[itemDisplayNameField]}}
+      </a>
+      <i *ngIf="isSelectedItem(item)" class="checkmark green icon"></i>
+    </h4>
+  </div>
+  
+  <a class="show-more"
+    [hidden]="isShowMore && actualCollection?.length > 10"
+    (click)="showMore()"
+  >
+    <span>Show More</span>
+    <i class="dropdown icon"></i>
+  </a>
+</div>
